@@ -1,5 +1,11 @@
 
 //dragging n droppping
+//disable the cursor from interact js
+interact('.draggable').draggable({
+  cursorChecker: () => null, 
+  listeners: { move: dragMoveListener }
+});
+
 // target elements with the "draggable" class
 interact('.draggable')
   .draggable({
@@ -43,3 +49,8 @@ window.dragMoveListener = dragMoveListener
 //opening n closing tabs
 
 //playing sounds
+
+
+
+
+
