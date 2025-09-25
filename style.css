@@ -206,6 +206,40 @@ hr {
   height: 600px;
   overflow: hidden;
 }
+#work-window-content {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding: 10px;
+  font-size: clamp(1rem, 1.2vw, 1.3rem);
+  padding-left: 4%;
+}
+#tools-dev {
+  display: flex;
+  flex-direction: row;
+}
+.h3move {
+  margin-left: 25px;
+}
+.box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.box p {
+  margin: 5px;
+  background-color: #0d1b2a;
+  border: 1px solid #eaf4d3;
+  border-bottom: 5px solid #e0e1dd;
+  border-radius: 8px;
+  text-align: center;
+  padding: 0px;
+  align-self: center;
+  padding: 5px;
+}
+.box p:hover {
+  transform: translateY(3px);
+  transition: transform 0.2s ease;
+}
 /*contact window*/
 
 /*colors*/
