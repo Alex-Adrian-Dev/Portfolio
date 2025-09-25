@@ -1,6 +1,10 @@
-//dragging n droppping
+//dragging n droppping icons
 //disable the cursor from interact js
 interact(".draggable").draggable({
+  cursorChecker: () => null,
+  listeners: { move: dragMoveListener },
+});
+interact(".window").draggable({
   cursorChecker: () => null,
   listeners: { move: dragMoveListener },
 });
@@ -50,4 +54,73 @@ document.querySelectorAll(".iconimg").forEach((icon) => {
   });
 });
 
+//draging windows
+// Make all windows draggable (header only)
+interact(".window").draggable({
+  allowFrom: ".window-header",
+  // keep the element within the area of it's parent
+  modifiers: [
+    interact.modifiers.restrictRect({
+      restriction: "body",
+      endOnly: true,
+    }),
+  ],
+  listeners: {
+    move(event) {
+      const target = event.target;
+      const x = (parseFloat(target.getAttribute("data-x")) || 0) + event.dx;
+      const y = (parseFloat(target.getAttribute("data-y")) || 0) + event.dy;
+
+      target.style.transform = `translate(${x}px, ${y}px)`;
+      target.setAttribute("data-x", x);
+      target.setAttribute("data-y", y);
+    },
+  },
+});
+
 //opening n closing tabs
+// Keep track of open windows
+const openWindows = {};
+
+// Icons and their corresponding windows
+const windowsMap = {
+  "drag-1": "about-window",
+  "drag-2": "links-window",
+  "drag-3": "work-window",
+  "drag-4": "contact-window",
+};
+
+// Loop through each icon → setup open/close behavior
+Object.entries(windowsMap).forEach(([iconId, windowId]) => {
+  const icon = document.getElementById(iconId);
+  const windowEl = document.getElementById(windowId);
+  const closeBtn = windowEl.querySelector(".close-btn");
+
+  // Double-click to open window
+  icon.addEventListener("dblclick", () => {
+    if (!openWindows[windowId]) {
+      windowEl.style.display = "flex";
+      openWindows[windowId] = true;
+    }
+    bringToFront(windowEl);
+  });
+
+  // Close button
+  closeBtn.addEventListener("click", () => {
+    windowEl.style.display = "none";
+    openWindows[windowId] = false;
+    clickSound.currentTime = 0;
+    clickSound.play();
+  });
+
+  //Clicking on window itself also brings it to front
+  windowEl.addEventListener("mousedown", () => {
+    bringToFront(windowEl);
+  });
+});
+
+let topZ = 20;
+
+function bringToFront(el) {
+  el.style.zIndex = ++topZ;
+}
