@@ -26,6 +26,19 @@ body {
   }
 }
 
+a:visited {
+  text-decoration: none;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  cursor: url("assets/icons/icons8-cursor-48.png"), auto;
+}
+
 button {
   background: none;
   border: none;
@@ -34,9 +47,6 @@ button {
   cursor: url("assets/icons/icons8-cursor-48.png"), auto;
 }
 
-a:hover {
-  cursor: url("assets/icons/icons8-cursor-48.png"), auto;
-}
 /*Main desktop title (My name)*/
 #title1 h1 {
   font-size: clamp(3rem, 5vw, 6rem);
@@ -85,6 +95,9 @@ a:hover {
   /*this is a class just so I can target the img inside of each icon*/
   margin-top: 0;
 }
+.icons img {
+  transition: transform 0.2s ease;
+}
 
 .icons img:hover {
   transform: scale(1.1);
@@ -117,6 +130,10 @@ a:hover {
   padding-right: 15px;
   margin-top: 10px;
 }
+.close-btn {
+  transition: transform 0.2s ease;
+}
+
 .close-btn:hover {
   transform: scale(1.1);
   transition: transform 0.2s ease;
@@ -156,6 +173,7 @@ a:hover {
   width: 140px;
   height: 140px;
   padding: 30px;
+  transition: transform 0.2s ease;
 }
 
 #about-header img:hover {
@@ -163,7 +181,7 @@ a:hover {
   transition: transform 0.2s ease;
 }
 
-hr {
+#about-window hr {
   width: 100%;
   height: 5px;
   border-width: 0;
@@ -207,8 +225,6 @@ hr {
   overflow: hidden;
 }
 #work-window-content {
-  flex: 1 1 auto;
-  overflow-y: auto;
   padding: 10px;
   font-size: clamp(1rem, 1.2vw, 1.3rem);
   padding-left: 4%;
@@ -217,6 +233,10 @@ hr {
   display: flex;
   flex-direction: row;
 }
+
+#tools-dev h3 {
+  align-self: center;
+}
 .h3move {
   margin-left: 25px;
 }
@@ -224,6 +244,8 @@ hr {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  border-left: 4px solid #eaf4d3;
+  margin-left: 10px;
 }
 .box p {
   margin: 5px;
@@ -235,12 +257,80 @@ hr {
   padding: 0px;
   align-self: center;
   padding: 5px;
+  transition: transform 0.2s ease;
 }
 .box p:hover {
   transform: translateY(3px);
   transition: transform 0.2s ease;
 }
+#work-window hr {
+  width: 100%;
+  color: #eaf4d3;
+  background-color: #eaf4d3;
+}
+#projects-game-soft {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding: 10px;
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  padding-left: 4%;
+}
+.project {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  width: fit-content;
+  padding-bottom: 100px;
+}
+.project img {
+  width: 270px;
+  height: 210px;
+  border-radius: 3%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.2s ease;
+}
+.project img:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease;
+}
+
+#project-text-box {
+  padding-left: 3%;
+  padding-right: 3%;
+  height: 210px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#project-text-box p,
+#project-text-box h2 {
+  margin: 0px;
+}
+#priject-dcrpt {
+  padding: 5px;
+}
+.indented-hr {
+  margin-left: 20px;
+  margin-right: 20px;
+  border: 1px solid #ccc;
+}
 /*contact window*/
+#contact-window {
+  width: 530px;
+  height: 600px;
+  overflow: hidden;
+}
+#contact-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+#contact-text img {
+  height: 300px;
+  width: 300px;
+}
 
 /*colors*/
 .white {
