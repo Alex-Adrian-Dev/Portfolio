@@ -210,7 +210,7 @@ button {
   width: 600px;
   height: 400px;
   overflow: hidden;
-  font-size: clamp(1rem, 1.1vw, 1.2rem);
+  font-size: clamp(1rem, 1.1vw, 1.1rem);
 }
 #links-files {
   display: flex;
@@ -218,6 +218,7 @@ button {
   justify-content: space-evenly;
   flex-wrap: wrap;
   margin-top: 30px;
+  font-size: clamp(1rem, 1.1vw, 1.1rem);
 }
 /*work window*/
 #work-window {
