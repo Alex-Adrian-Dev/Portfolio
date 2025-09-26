@@ -36,6 +36,7 @@ a:link {
 
 a:hover {
   text-decoration: underline;
+  text-decoration-color: #d95d39;
   cursor: url("assets/icons/icons8-cursor-48.png"), auto;
 }
 
@@ -211,6 +212,9 @@ button {
   height: 400px;
   overflow: hidden;
   font-size: clamp(1rem, 1.1vw, 1.1rem);
+}
+#links-window a {
+  font-size: clamp(1rem, 1.5vw, 2rem);
 }
 #links-files {
   display: flex;
