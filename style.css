@@ -227,6 +227,9 @@ button {
   margin-bottom: 30px;
   font-size: clamp(1rem, 1.1vw, 1.1rem);
 }
+#links-window p {
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+}
 /*work window*/
 #work-window {
   width: 950px;
