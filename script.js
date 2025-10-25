@@ -55,38 +55,6 @@ document.querySelectorAll(".iconimg").forEach((icon) => {
   });
 });
 
-//add later if i can find a nice melody
-/*//melody for tools
-// Load your notes into an array
-const notes = [
-  new Audio("assets/sounds/not1.mp3"),
-  new Audio("assets/sounds/not2.mp3"),
-  new Audio("assets/sounds/not3.mp3"),
-  new Audio("assets/sounds/not4.mp3"),
-  new Audio("assets/sounds/not5.mp3"),
-  new Audio("assets/sounds/not6.mp3"),
-  new Audio("assets/sounds/not7.mp3"),
-  new Audio("assets/sounds/not8.mp3"),
-  // keep adding as many notes as you need
-];
-
-let currentNote = 0; // track which note is next
-
-// Attach hover sound behavior
-document.querySelectorAll(".note").forEach((tool) => {
-  tool.addEventListener("mouseenter", () => {
-    // Get the current note
-    const note = notes[currentNote];
-
-    // Reset and play
-    note.currentTime = 0;
-    note.play();
-
-    // Move to next note
-    currentNote = (currentNote + 1) % notes.length;
-  });
-});*/
-
 //draging windows
 // Make all windows draggable (header only)
 interact(".window").draggable({
