@@ -206,6 +206,11 @@ button {
 #degree p {
   margin-bottom: 0;
 }
+ul {
+  list-style-position: inside;
+  padding-left: 0;
+  margin: 0;
+}
 /*links window*/
 #links-window {
   width: 600px;
